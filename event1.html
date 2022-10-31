@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>changes background</title>
+    <style>
+        body{
+            background: rgb(0, 0, 255);
+            height: 100em;
+        }
+        nav{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            color: white;
+            background-color: aqua;
+            padding: 1em;
+        }
+        div{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+        section{
+            width: 400px;
+            height: 400px;
+            background-color: rgb(169, 220, 16);
+        }
+        aside{
+            display: flex;
+            flex-direction: column;
+        }
+        button{
+            padding: 1em;
+            width: 70%;
+            margin-top: 1em;
+            background-color: palevioletred;
+            border: none;
+            border-radius: 10px;
+        }
+        button:hover{
+            box-shadow: 0 0 15px white;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="#">home</a>
+        <a href="#">home</a>
+        <a href="#">home</a>
+        <a href="#">home</a>
+        <a href="#">home</a>
+
+    </nav>
+    <div>
+        <section>
+            <ol>
+                <li>Which of these languages is OOP
+                    <ol type="a">
+                        <li><input type="radio" name="q1" id="html"><label for="html">HTML</label></li>
+                        <li><input type="radio" name="q1" id="css"><label for="css">CSS</label></li>
+                        <li><input type="radio" name="q1" id="js"><label for="js">JavaScript</label></li>
+                        <li><input type="radio" name="q1" id="cobol"><label for="cobol">Cobol</label></li>
+                    </ol>
+                </li>
+                <p></p>
+            </ol>
+        </section>
+    <aside>
+        <button>Change color</button>
+        <button>Change color</button>
+
+        <button>Change color</button>
+
+        <button>Change color</button>
+
+        <button>Change color</button>
+    </aside>
+    </div>
+    <main>
+        
+
+
+    </main>
+    
+</body>
+<script>
+    const section = document.querySelector('section')
+
+    const btn = document.querySelectorAll('button')
+
+    const pee =  document.querySelector('p')
+
+    const q1 = document.querySelectorAll('input')[2]
+
+    const bChange = () => {
+        section.style.background = 'blue'
+        
+    }
+    const keyW = (e) => pee.textContent = `I pressed ${e.key}`
+    function click(){
+        if(q1.checked){
+            alert('yes')
+        }
+    }
+    for(let but of btn){
+        but.addEventListener('click', click)
+        but.addEventListener('click', bChange)
+    }
+
+</script>
+</html>
